@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="main-container">
+
+
+        <div class="watch-container">
+           <div class="time">
+            <div id="time"> 00 : 00 : 00 : 00 PM</div>
+            <p id="dates"></p>           
+           </div>
+         </div>
+
+
+
+
+
+
+        <div class="stop-watch-container">
+            <div class="main-box" id="display">
+              <div class="slider hour">00</div>
+              <h5>:</h5>
+              <div class="slider minute">00</div>
+              <h5>:</h5>
+              <div class="slider second">00</div>
+              <h5>:</h5>
+              <div class="slider">00</div>
+            </div>
+            <div class="btn-box">
+                <div class="btn pause" id="pause">Pause</div>
+                <div class="btn start" id="start">Start</div>
+                <div class="btn reset" id="reset">Reset</div>
+                <div class="btn add" id="add">Note</div>
+            </div>
+        </div>
+    </div>
+    <div class="laps" id="laps"></div>
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: relative;
+        /* animation-name: example;
+        animation-duration: 4s;
+        animation-iteration-count: infinite; */
+      }
+
+      @keyframes example {
+        0% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+        25% {
+          background-color: yellow;
+          left: 200px;
+          top: 0px;
+        }
+        50% {
+          background-color: blue;
+          left: 200px;
+          top: 200px;
+        }
+        75% {
+          background-color: green;
+          left: 0px;
+          top: 200px;
+        }
+        100% {
+          background-color: red;
+          left: 0px;
+          top: 0px;
+        }
+      }
+      .timebox {
+        width: 200px;
+        height: 100px;
+        background-color: antiquewhite;
+        position: relative;
+        overflow: hidden;
+      }
+      .timebox div {
+        width: 100px;
+        height: 100%;
+        background-color: aquamarine;
+        position: absolute;
+        animation-name: slidup;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+      #numberbox {
+        font-size: 75px;
+        text-align: center;
+      }
+      @keyframes slidup {
+        0% {
+          bottom: -100px;
+        }
+        50% {
+          bottom: -0px;
+        }
+        100% {
+          bottom: 100px;
+        } 
+      }
+    </style>
+  </head>
+  <body>
+    <h1>CSS Animation</h1>
+
+    <div id="box"></div>
+    <div class="timebox">
+      <div id="numberbox"></div>
+    </div>
+    <script>
+      const numberbox = document.getElementById("numberbox");
+      let counter = 50;
+      //   numberbox.innerHTML = 2;
+
+      function increaseCounter() {
+        if (counter >= 0) {
+          numberbox.innerHTML = counter;
+          counter--;
+        }
+      }
+      setInterval(increaseCounter, 2000);
+    </script>
+  </body>
+</html> -->
