@@ -58,22 +58,52 @@
 }
 .stop-watch-container .main-box{
     width: 90%;
-    height: 50%;
+    /* height: 50%; */
     font-size: 3rem;
     box-shadow: 2px 2px 6px rgb(152, 234, 248);
     color: rgb(36, 118, 212);
+    /* position: relative; */
+    overflow: hidden;
     display: flex;
     justify-content: space-around;
     align-items: center;    
 }
 
-/* .second{
-    background-color: black;
+.div{
+    width: 35px;    
+    position: relative;
+    display: flex;
+    justify-content: center;    
+}
+.slider{
+    width: 60px;
+    height: 60px;
+}
+
+.second-slider{
+    position: relative;
+    
     animation-name: second-anime;
     animation-duration: 1s;
-
-} */
-
+    animation-iteration-count: infinite;
+    animation-play-state:running;
+}
+.minute-slider{
+    position: relative;
+    animation-name: minute-anime;
+    animation-duration: 60s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-play-state:running;
+}
+.hour-slider{
+    position: relative;
+    animation-name: hour-anime;
+    animation-duration: 3600s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-play-state: running;
+}
 .btn-box{
     width: 70%;
     height: 40%;
@@ -125,14 +155,77 @@
 
 
 /* animation */
-/* @keyframes second-anime{
+@keyframes second-anime{
     0% {
         bottom: -100px;
       }
       50% {
-        bottom: -0px;
+        bottom: -18px;
+        /* background-color: black; */
       }
       100% {
         bottom: 100px;
       } 
-    } */
+    }
+
+
+
+    @keyframes minute-anime{
+        0% {
+            left: 0px;
+            top: 0px;
+          }
+          50% {
+           left: 0px;
+            top: -60px;
+          }
+          60% {
+           left: 60px;
+            top: -60px;
+            display: none;
+          } 
+          80%{
+            left: 60px;
+            top: 60px;
+            display: none;
+          }
+
+          90%{
+            left: 0px;
+            top: 60px;
+          }
+            100%{
+            left: 0px;
+            top: 5px;
+            }
+    }
+
+    @keyframes hour-anime{
+        0% {
+            left: 0px;
+            top: 0px;
+          }
+          50% {
+           left: 0px;
+            top: -60px;
+          }
+          60% {
+           left: 60px;
+            top: -60px;
+            display: none;
+          } 
+          80%{
+            left: 60px;
+            top: 60px;
+            display: none;
+          }
+
+          90%{
+            left: 0px;
+            top: 60px;
+          }
+            100%{
+            left: 0px;
+            top: 5px;
+            }
+    }

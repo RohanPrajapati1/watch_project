@@ -123,6 +123,10 @@
     const startbtn = document.getElementById("start");
     const resetbtn = document.getElementById("reset");
     const stopdisplay = document.getElementById("display");
+    const hour_box = document.getElementById("hour");
+    const minute_box = document.getElementById("minute");
+    const second_box = document.getElementById("second");
+    const milli_box = document.getElementById("milli");
     const addbtn = document.getElementById("add");
     const laps  = document.getElementById("laps");
     
@@ -132,10 +136,18 @@
     
     
     startbtn.addEventListener("click" , () => { 
+        second_box.classList.add('second-slider');
+        minute_box.classList.add('minute-slider');
+        hour_box.classList.add('hour-slider');
+        let cList = minute_box.classList;
+        console.log(cList);
+        // console.log(cList.)
+        
         if(timer !== null){
     
             clearInterval(timer);
         }
+        
             timer = setInterval(watchStart , 10);   
     })
     
@@ -157,21 +169,39 @@
         m = minute < 10 ? "0"+minute : minute;
         s = second < 10 ? "0"+second : second;
         milli = millisecond < 10 ? "0"+millisecond : millisecond;
-        stopdisplay.innerHTML = h+" : "+m+" : "+s+" : "+milli;
+        hour_box.innerText = h;
+        minute_box.innerText = m;
+        second_box.innerText = s;
+        milli_box.innerText = milli;
     }
     
     pausebtn.addEventListener('click' , () =>{
+        second_box.classList.remove('second-slider');
+        minute_box.style.animationPlayState = "paused";
+        hour_box.style.animationPlayState  = "paused";
         clearInterval(timer);
     });
+
+    
     
     resetbtn.addEventListener("click",() => {
+
+        second_box.classList.remove('second-slider');
+        minute_box.classList.remove('minute-slider');
+        hour_box.classList.remove('hour-slider');
+
+
+
         clearInterval(timer);
         [hour , minute , second ,millisecond] = [0,0,0,0];
         h = hour < 10 ? "0"+hour : hour;
         m = minute < 10 ? "0"+minute : minute;
         s = second < 10 ? "0"+second : second;
         milli = millisecond < 10 ? "0"+millisecond : millisecond;
-        stopdisplay.innerHTML = h+" : "+m+" : "+s+" : "+milli;
+        hour_box.innerText = h;
+        minute_box.innerText = m;
+        second_box.innerText = s;
+        milli_box.innerText = milli;
         laps.innerHTML="";
     });
     
