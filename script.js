@@ -129,20 +129,29 @@
     const milli_box = document.getElementById("milli");
     const addbtn = document.getElementById("add");
     const laps  = document.getElementById("laps");
+    let cList = minute_box.classList;
     
     let [hour , minute , second ,millisecond] = [0,0,0,0];
     let timer = null;
     
     
-    
-    startbtn.addEventListener("click" , () => { 
+
+    startbtn.addEventListener("click" , () => {   
+        // for(let i = 0; i < cList.length; i++){
+        //     console.log(cList[i]);
+        // }
+        // console.log(cList);
+        if( minute_box.style.animationPlayState === "paused"){
+            minute_box.style.animationPlayState = "running";
+        }
+        else{
+            minute_box.classList.add('minute-slider');
+        }
         second_box.classList.add('second-slider');
-        minute_box.classList.add('minute-slider');
+       
         hour_box.classList.add('hour-slider');
-        let cList = minute_box.classList;
-        console.log(cList);
-        // console.log(cList.)
-        
+        // let cList = minute_box.classList;
+        // console.log(cList);        
         if(timer !== null){
     
             clearInterval(timer);
